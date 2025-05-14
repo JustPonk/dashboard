@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard Tiempo Real</title>
+</head>
+<body>
+  <h1>Datos en tiempo real</h1>
+  <div id="datos"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    socket.on('datosTiempoReal', (data) => {
+      document.getElementById('datos').innerHTML = `
+        <p>🌡️ Temperatura: ${data.temperatura.toFixed(2)} °C</p>
+        <p>👥 Usuarios activos: ${data.usuariosActivos}</p>
+        <p>💰 Ventas: $${data.ventas}</p>
+      `;
+    });
+  </script>
+</body>
+</html>
