@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Dashboard Tiempo Real</title>
-</head>
-<body>
-  <h1>Datos en tiempo real</h1>
-  <div id="datos"></div>
-
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-    const socket = io();
-
-    socket.on('datosTiempoReal', (data) => {
-      document.getElementById('datos').innerHTML = `
-        <p>🌡️ Temperatura: ${data.temperatura.toFixed(2)} °C</p>
-        <p>👥 Usuarios activos: ${data.usuariosActivos}</p>
-        <p>💰 Ventas: $${data.ventas}</p>
-      `;
-    });
-  </script>
-</body>
-</html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dashboard Tiempo Real</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+      </head>
+      <body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
+        <h1 class="text-3xl font-bold mb-6 text-center">📊 Dashboard en Tiempo Real</h1>
+      
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
+          <div class="bg-white shadow-lg rounded-xl p-4">
+            <h2 class="text-lg font-semibold mb-2">🌡️ Temperatura (°C)</h2>
+            <canvas id="graficoTemperatura"></canvas>
+          </div>
+          <div class="bg-white shadow-lg rounded-xl p-4">
+            <h2 class="text-lg font-semibold mb-2">👥 Usuarios Activos</h2>
+            <canvas id="graficoUsuarios"></canvas>
+          </div>
+          <div class="bg-white shadow-lg rounded-xl p-4 md:col-span-2">
+            <h2 class="text-lg font-semibold mb-2">💰 Ventas ($)</h2>
+            <canvas id="graficoVentas"></canvas>
+          </div>
+        </div>
+      
+        <script src="/socket.io/socket.io.js"></script>
+        <!-- tu script para gráficos aquí (ya lo tienes abajo en el archivo) -->
+      </body>
+      </html>
