@@ -42,3 +42,15 @@ Este proyecto es una interfaz visual en tiempo real que se conecta a una base de
 - Visualización de métricas IoT, eCommerce o apps de usuarios
 
 ---
+
+Datos en tiempo real en localhost
+
+![a111](https://github.com/user-attachments/assets/78df385c-b7a1-4b8c-a7e4-2ce944271f31)
+![a222](https://github.com/user-attachments/assets/aeb051fb-1961-4258-a908-1cddaffe9d29)
+
+Guardado de datos en MongoDB 
+
+![a333](https://github.com/user-attachments/assets/36be6de3-de8d-41e5-a712-bbb1fbf82b76)
+
+
+
